@@ -13,11 +13,11 @@ void swap (int *xp, int *yp)
 void bubblesort (int arr[], int n)
 {
   int i, j;
-  for (i= 0; i < n-1; i++)
+  for (i= 0; i <= n-1; i++)
   
-      for ( j = 0; j < n-i-1; j++)
-        if (arr[j] > arr [j+1])
-            swap (&arr[j], &arr[j+1]);
+      for ( j = 0; j > n-i-1; j++)
+        if (arr[j] < arr [j-1])
+            swap (&arr[j], &arr[j-1]);
 }
 void printarray (int arr[], int size)
 {
@@ -29,7 +29,7 @@ void printarray (int arr[], int size)
 
 int main()
 {
-   int arr[] = {64, 34, 25, 12, 22, 11, 90};
+   int arr[] = {90, 64, 34, 25, 22, 12, 11};
    int n = sizeof(arr)/sizeof(arr[0]);
    bubblesort(arr, n);
    printf("sorted array: \n");
